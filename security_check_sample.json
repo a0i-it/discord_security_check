@@ -1,0 +1,79 @@
+{
+  "SchemaVersion": "2018-10-08",
+  "Id": "arn:aws:securityhub:ap-northeast-1:XXXXXXXXXXXX:security-control/Config.1/finding/XXXXXXXXXXXX",
+  "ProductArn": "arn:aws:securityhub:ap-northeast-1::product/aws/securityhub",
+  "ProductName": "Security Hub",
+  "CompanyName": "AWS",
+  "Region": "ap-northeast-1",
+  "GeneratorId": "security-control/Config.1",
+  "AwsAccountId": "XXXXXXXXXXXX",
+  "Types": [
+    "Software and Configuration Checks/Industry and Regulatory Standards"
+  ],
+  "FirstObservedAt": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+  "LastObservedAt": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+  "CreatedAt": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+  "UpdatedAt": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+  "Severity": {
+    "Label": "MEDIUM",
+    "Normalized": 40,
+    "Original": "MEDIUM"
+  },
+  "Title": "AWS Config should be enabled",
+  "Description": "This AWS control checks whether the Config service is enabled in the account for the local region and is recording all resources.",
+  "Remediation": {
+    "Recommendation": {
+      "Text": "For information on how to correct this issue, consult the AWS Security Hub controls documentation.",
+      "Url": "https://docs.aws.amazon.com/console/securityhub/Config.1/remediation"
+    }
+  },
+  "ProductFields": {
+    "aws/securityhub/ProductName": "Security Hub",
+    "aws/securityhub/CompanyName": "AWS",
+    "Resources:0/Id": "arn:aws:iam::XXXXXXXXXXXX:root",
+    "aws/securityhub/FindingId": "arn:aws:securityhub:ap-northeast-1::product/aws/securityhub/arn:aws:securityhub:ap-northeast-1:XXXXXXXXXXXX:security-control/Config.1/finding/XXXXXXXXXXXX"
+  },
+  "Resources": [
+    {
+      "Type": "AwsAccount",
+      "Id": "AWS::::Account:XXXXXXXXXXXX",
+      "Partition": "aws",
+      "Region": "ap-northeast-1"
+    }
+  ],
+  "Compliance": {
+    "Status": "FAILED",
+    "RelatedRequirements": [
+      "PCI DSS v3.2.1/10.5.2",
+      "PCI DSS v3.2.1/11.5",
+      "CIS AWS Foundations Benchmark v1.2.0/2.5"
+    ],
+    "SecurityControlId": "Config.1",
+    "AssociatedStandards": [
+      {
+        "StandardsId": "standards/pci-dss/v/3.2.1"
+      },
+      {
+        "StandardsId": "ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+      },
+      {
+        "StandardsId": "standards/aws-foundational-security-best-practices/v/1.0.0"
+      }
+    ]
+  },
+  "WorkflowState": "NEW",
+  "Workflow": {
+    "Status": "NEW"
+  },
+  "RecordState": "ACTIVE",
+  "FindingProviderFields": {
+    "Severity": {
+      "Label": "MEDIUM",
+      "Original": "MEDIUM"
+    },
+    "Types": [
+      "Software and Configuration Checks/Industry and Regulatory Standards"
+    ]
+  },
+  "ProcessedAt": "YYYY-MM-DDTHH:MM:SS.mmmZ"
+}
