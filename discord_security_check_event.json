@@ -1,0 +1,14 @@
+{
+  "source": ["aws.securityhub"],
+  "detail-type": ["Security Hub Findings - Imported"],
+  "detail": {
+    "findings": {
+      "Compliance": {
+        "Status": ["FAILED"]
+      },
+      "Workflow": {
+        "Status": ["NEW"]
+      }
+    }
+  }
+}
