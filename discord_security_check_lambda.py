@@ -10,6 +10,7 @@ def lambda_handler(event, context):
     try:
         print(event)
         messages = parse_event(event)
+        result_update(event)
         web_hook(messages)
         return {
             'statusCode': 200,
@@ -36,7 +37,26 @@ def web_hook(messages):
         response_body = response.read().decode("utf-8")
         print(response_body)
 
- 
+### 対象の検出項目のワークフローステータスをNOTIFIEDにする
+def result_update(event):
+    client = boto3.client('securityhub')
+    response = client.batch_update_findings(
+        FindingIdentifiers=[
+            {
+                'Id': event['detail']['findings'][0]['Id'],
+                'ProductArn': event['detail']['findings'][0]['ProductArn']
+            },
+        ],
+        Note={
+            'Text': event['time']+'に通知済み',
+            'UpdatedBy': 'discord_security_check_lambda'
+        },
+        Workflow={
+            'Status': 'NOTIFIED'
+        }
+    )
+    logger.info('Success Update Finding!')
+
 ### イベントからDiscordメッセージを整形
 def parse_event(event):
 
