@@ -8,6 +8,7 @@ AWS SecurityHubの検出結果をDiscordに通知します
 + Lambda関数：discord_security_check_lambda.py<br>
    - web_hookのurlは置き換えてください。<br>
    - Lambda実行ロールはAWSマネージドの**AWSLambdaBasicExecutionRole**と**securityhub:BatchUpdateFindings**があれば動作します。<br>
+   - 一度のみ通知する仕組みとなっています。12時間ごとの通知としたい場合はlambda_handlerからresult_updateを取り除いてください。<br>
 + EventBridgeルール：discord_security_check_event.json<br>
 + SecurityHubサンプル結果：security_check_sample.json<br>
    - Test実行するときのイベントとして利用できます。<br>
